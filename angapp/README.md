@@ -1,3 +1,11 @@
+# Training application
+
+This project consists of training application where user can view the available trainings and apply for those training as well as delete the specific training if the user do not want to attend.
+
+# Reference
+
+Under src/assets/MEAN_Training_App.docx file you can view the commands used under this project as well as the screen shots of the available pages under this project.
+
 # Angapp
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.2.
