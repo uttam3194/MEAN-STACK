@@ -1,0 +1,20 @@
+<div class="trainingData">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+        <td><b>Title</b></td>
+        <td><b>Trainer</b></td>
+        <td><b>Username</b></td>
+    </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let trainingUser of trainingUsers">
+            <td>{{ trainingUser.title }}</td>
+            <td>{{ trainingUser.trainer }}</td>
+            <td>{{ trainingUser.username }}</td>
+            <td><a [routerLink]="['/view']" class="btn btn-primary">Back</a></td>
+        </tr>
+    </tbody>
+  </table>
+</div>

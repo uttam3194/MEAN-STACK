@@ -1,0 +1,24 @@
+<div class="row" style="margin-top:40px; background-color:#eff0f2;
+-webkit-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+-moz-box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);
+box-shadow: 0px 0px 5px 2px rgba(0,0,0,0.2);">
+  <!-- <div class="col-sm-12" style="text-align:center;">
+    Register
+  </div> -->
+
+  <div class="col-sm-12">
+      <div class="jumbotron">
+          <h1 class="display-4">Hello, {{userData.username}}</h1>
+          <p class="lead">Username: {{userData.username}}</p>
+          <p class="lead">Email: {{userData.email}}</p>
+          <hr class="my-4">
+          <p class="lead">You have successfully logged in to training system.</p>
+          <div class="lead" style="color:white;">
+            <a class="btn btn-primary" role="button" style='margin-right:10px; text-transform: uppercase' (click)="update()">Update</a>
+            <a class="btn btn-primary" role="button" style='margin-right:10px; text-transform: uppercase' (click)="trainings()">Trainings</a>
+            <a class="btn btn-primary" role="button" style='margin-right:10px; text-transform: uppercase' (click)="view()">View</a>
+            <a class="btn btn-primary" role="button" style='margin-right:16px; text-transform: uppercase' (click)="logout()">Log Out</a>
+          </div>
+      </div>
+  </div>
+</div>

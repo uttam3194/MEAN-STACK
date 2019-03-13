@@ -1,0 +1,35 @@
+<div class="row" style="margin-top:40px; background-color: #eff0f2;
+-webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+-moz-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);">
+
+  <div class="col-sm-12">
+    <h1 style="color: black; text-align: center;">Sign Up</h1>
+    <form [formGroup]="registerForm">
+      <div class="form-group">
+        <label for="exampleInputEmail">Email Address</label>
+        <input formControlName="email" type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Email">
+        <small id="emailHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group">
+          <label for="exampleInputUsername">Username</label>
+          <input formControlName="username" type="text" class="form-control" id="exampleInputUsername" aria-describedby="userHelp" placeholder="Username">
+          <small id="userHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group">
+          <label for="passwordInput">Pssword</label>
+          <input formControlName="password" type="password" class="form-control" id="passwordInput" aria-describedby="passHelp" placeholder="Password">
+          <small id="passHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group">
+        <label for="CpasswordInput">Confirm Pssword</label>
+        <input formControlName="cpass" type="password" class="form-control" id="CpasswordInput" aria-describedby="CpassHelp" placeholder="Password">
+        <small id="CpassHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group" style="text-align: center;">
+        <button type="button" class="btn btn-dark" (click)="register()">Register</button>
+        <button type="button" class="btn btn-secondary" (click)="moveToLogin()">Login</button>
+      </div>
+    </form>
+  </div>
+</div>

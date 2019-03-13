@@ -1,0 +1,9 @@
+.btn-right {
+  position: absolute;
+  margin: 0;
+  right: 0;
+}
+
+span h1:hover {
+  color: magenta;
+}

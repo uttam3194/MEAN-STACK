@@ -1,0 +1,21 @@
+<div class="trainingData">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+        <td><b>Title</b></td>
+        <td><b>Trainer</b></td>
+        <td><b>Sessions</b></td>
+        <td colspan="5"><b>Actions</b></td>
+    </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let userTraining of userTrainings">
+            <td>{{ userTraining.title }}</td>
+            <td>{{ userTraining.trainer }}</td>
+            <td colspan="5">{{ userTraining.sessions }}</td>
+            <td><a (click) = "deleteuserTraining(userTraining.userId, userTraining.trainingId)" class="btn btn-danger">Delete</a></td>
+        </tr>
+    </tbody>
+  </table>
+</div>

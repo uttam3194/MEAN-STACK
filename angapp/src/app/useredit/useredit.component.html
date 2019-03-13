@@ -1,0 +1,24 @@
+<div class="row" style="margin-top:40px; background-color: #eff0f2;
+-webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+-moz-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);">
+
+  <div class="col-sm-12">
+    <h1 style="color: black; text-align: center; text-transform: uppercase;">Update</h1>
+    <form [formGroup]="editForm">
+      <div class="form-group">
+        <label for="exampleInputEmail">Email Address</label>
+        <input formControlName="email" #email [(ngModel)]="data.email" type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Email">
+        <small id="emailHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group">
+          <label for="exampleInputUsername">Username</label>
+          <input formControlName="username" #username [(ngModel)]="data.username" type="text" class="form-control" id="exampleInputUsername" aria-describedby="userHelp" placeholder="Username">
+          <small id="userHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group" style="text-align: center;">
+        <button type="button" class="btn btn-dark" style="text-transform: uppercase" (click)="update(data)">Update</button>
+      </div>
+    </form>
+  </div>
+</div>

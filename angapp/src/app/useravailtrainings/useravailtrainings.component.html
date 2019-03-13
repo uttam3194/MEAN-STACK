@@ -1,0 +1,25 @@
+<div class="trainingData">
+  <table class="table table-hover">
+    <thead>
+    <tr>
+        <td><b>Title</b></td>
+        <td><b>Topics</b></td>
+        <td><b>Days</b></td>
+        <td><b>Trainer</b></td>
+        <td><b>Sessions</b></td>
+        <td colspan="5"><b>Actions</b></td>
+    </tr>
+    </thead>
+
+    <tbody>
+        <tr *ngFor="let training of trainings">
+            <td>{{ training.title }}</td>
+            <td>{{ training.topics }}</td>
+            <td>{{ training.days }}</td>
+            <td>{{ training.trainer }}</td>
+            <td colspan="5">{{ training.sessions }}</td>
+            <td><a (click) = "applyTraining(training._id, training.title, training.trainer, training.sessions)" class="btn btn-primary">Apply</a></td>
+        </tr>
+    </tbody>
+  </table>
+</div>

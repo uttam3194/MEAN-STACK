@@ -1,0 +1,25 @@
+<div class="row" style="margin-top:10%; background-color: #eff0f2;
+  -webkit-box-radius: 10px auto;
+  -webkit-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.2);">
+  <div class="col-sm-12">
+      <form [formGroup] = "loginForm">
+        <h1 style="text-align: center; color:black; ">Log in</h1>
+        <div class="form-group">
+          <label for="exampleInputEmail">Email Address</label>
+          <input formControlName="email" type="email" class="form-control" id="exampleInputEmail" aria-describedby="emailHelp" placeholder="Email">
+          <small id="emailHelp" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group">
+            <label for="passwordInput">Pssword</label>
+            <input formControlName="password" type="password" class="form-control" id="passwordInput" aria-describedby="passHelp" placeholder="Password">
+            <small id="passHelp" class="form-text text-muted"></small>
+        </div>
+        <div class="form-group" style="text-align: center; ">
+          <button type="button" class="btn btn-dark" (click)="login()">Login</button>
+          <button type="button" class="btn btn-secondary" (click)="moveToRegister()">Register</button>
+        </div>
+      </form>
+  </div>
+</div>

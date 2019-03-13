@@ -1,0 +1,56 @@
+<body>
+  <mat-toolbar color="primary">
+    <mat-toolbar-row>
+      <span><h1>Training App</h1></span>
+      <span class="example-fill-remaining-space"></span>
+      <span class="align-center"></span>
+      <span class="example-spacer"></span>
+      <button mat-button [routerLink]="['/home']" routerLinkActive="active"><h2>Home</h2><span class="sr-only">(current)</span></button>
+      <button mat-button [routerLink]="['/about']" routerLinkActive="active"><h2>About</h2></button>
+
+      <button mat-button [matMenuTriggerFor]="appMenu"><h2>Training</h2></button>
+      <mat-menu #appMenu="matMenu">
+        <button mat-menu-item [routerLink]="['/add']" routerLinkActive="active">Add</button>
+        <button mat-menu-item [routerLink]="['/view']" routerLinkActive="active">View</button>
+      </mat-menu>
+
+      <div class="btn-right">
+        <button mat-button [routerLink]="['/contact']" routerLinkActive="active"><h2>Contact</h2></button>
+        <button mat-button [routerLink]="['/userhome']" routerLinkActive="active"><h2>Profile</h2></button>
+        <div *ngIf="loggedIn then Loggedin; else NloggedIn;"></div>
+          <ng-template #Loggedin>
+            Hello, {{username}}
+          </ng-template>
+          <ng-template #NloggedIn>
+            <button mat-button [routerLink]="['/login']" routerLinkActive="active"><h2>Login</h2></button>
+          </ng-template>
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+            <mat-icon>more_vert</mat-icon>
+        </button>
+        <mat-menu #menu="matMenu">
+          <ng-template matMenuContent>
+            <button mat-menu-item>
+              <mat-icon>dialpad</mat-icon>
+              <span>Redial</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>voicemail</mat-icon>
+              <span>Check voicemail</span>
+            </button>
+            <button mat-menu-item>
+              <mat-icon>notifications_off</mat-icon>
+              <span>Disable alerts</span>
+            </button>
+          </ng-template>
+        </mat-menu>
+      </div>
+    </mat-toolbar-row>
+  </mat-toolbar>
+  <div class="continer-fluid">
+    <div class="row">
+      <div class="col-md-5 offset-md-3">
+          <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</body>

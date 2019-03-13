@@ -1,0 +1,56 @@
+<div class="row" style="margin-top:40px; background-color: #eff0f2; border: 1px solid black;">
+
+  <form class="example-form" [formGroup]="trainingUpdateForm">
+        <div class="form-group">
+          <mat-form-field class="example-full-width" >
+            <input matInput formControlName="title" class="form-control" #title [(ngModel)]="data.title" maxlength="256" placeholder="Title">
+            <mat-error *ngIf="trainingUpdateForm.setErrors">Please enter training title</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field class="example-full-width">
+            <textarea matInput formControlName="topics" class="form-control" #topics [(ngModel)]="data.topics" maxlength="1000" rows="5" placeholder="Topics"></textarea>
+            <mat-error *ngIf="trainingUpdateForm.setErrors">Please enter training topics</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field class="example-full-width">
+            <mat-select formControlName="days" class="form-control" #days [(ngModel)]="data.days" placeholder="Training days">
+              <mat-option *ngFor="let day of Days" [value]="day">{{day}}</mat-option>
+            </mat-select>
+            <mat-error *ngIf="trainingUpdateForm.setErrors">Please select no of days</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field class="example-full-width">
+            <input matInput formControlName="startdate" class="form-control" #startdate [(ngModel)]="data.startdate" [min]="todaydate" [matDatepickerFilter]="myFilter" [matDatepicker]="dpstart" placeholder="From date">
+            <mat-datepicker-toggle matSuffix [for]="dpstart"></mat-datepicker-toggle>
+            <mat-datepicker #dpstart></mat-datepicker>
+            <mat-error *ngIf="trainingUpdateForm.setErrors">Please select valid start date</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-group">
+            <mat-form-field class="example-full-width">
+              <input matInput formControlName="enddate" class="form-control" #enddate [(ngModel)]="data.enddate" [min]="trainingUpdateForm.controls['startdate'].value" [matDatepickerFilter]="myFilter" [matDatepicker]="dpend" placeholder="End date">
+              <mat-datepicker-toggle matSuffix [for]="dpend"></mat-datepicker-toggle>
+              <mat-datepicker #dpend></mat-datepicker>
+              <mat-error *ngIf="trainingUpdateForm.setErrors">Please select valid end date</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <mat-form-field class="example-full-width" >
+              <input matInput formControlName="trainer" class="form-control" #trainer [(ngModel)]="data.trainer" maxlength="100" placeholder="Trainer">
+              <mat-error *ngIf="trainingUpdateForm.setErrors">Please enter trainer name</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+          <mat-form-field class="example-full-width" >
+            <textarea matInput formControlName="sessions" class="form-control" #sessions [(ngModel)]="data.sessions" rows="5" placeholder="Sessions"></textarea>
+            <mat-error *ngIf="trainingUpdateForm.setErrors">Please enter session timing details</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form-group" style="text-align: center;">
+          <button type="button" class="btn btn-dark" (click)="update(data)">Update</button>
+        </div>
+  </form>
+</div>
